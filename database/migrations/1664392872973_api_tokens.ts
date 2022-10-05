@@ -16,8 +16,8 @@ export default class ApiTokens extends BaseSchema {
       // table.timestamp('updated_at', { useTz: true }).notNullable()
 
       //mysql
-      table.timestamp('created_at').nullable()
-      table.timestamp('updated_at').notNullable()
+      table.timestamp('expires_at').nullable()
+      table.timestamp('created_at').notNullable()
     })
   }
 
