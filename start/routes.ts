@@ -7,28 +7,32 @@ Route.get('/', async () => {
     email: 'admin@email.com',
     password: '123456',
     type: 'admin',
-  });
-});
+  })
+})
 
 Route.post('/gettoken', async ({request, response, auth}: HttpContextContract) => {
-  const email = request.input("email");
-  const password = request.input("password");
+  const email = request.input("email")
+  const password = request.input("password")
 
-  const user = await User.findBy("email", email);
+  const user = await User.findBy("email", email)
 
   if(user ==  null) {
     return response.notFound("Usuário não encontrado")
   }
 
-  const token = await auth.use("api").attempt(email, password);
+  const token = await auth.use("api").attempt(email, password)
 
-  return response.ok(token);
-});
-
-Route.get('/auth', async ({ auth, response }: HttpContextContract) => {
-  const userAuth = await auth.use('api').authenticate()
-
-  if(userAuth) {
-    return response.ok(userAuth)
-  } 
+  return response.ok(token)
 })
+
+// Route.get('/auth', async ({ auth, response }: HttpContextContract) => {
+//   const userAuth = await auth.use('api').authenticate()
+
+//   if(userAuth) {
+//     return response.ok(userAuth)
+//   } 
+// })
+
+Route.get('/auth', async ({ response }: HttpContextContract) => {
+  return response.ok("Somente usuários autenticados podem acessar")
+}).middleware('auth') //executa entre as requisições
