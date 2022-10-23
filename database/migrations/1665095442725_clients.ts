@@ -16,7 +16,7 @@ export default class extends BaseSchema {
       table.string("name", 255).notNullable();
       table.string("cpf", 11).notNullable();
       table.string("phone", 15).notNullable();
-      table.timestamp("updated_at").notNullable();
+      table.timestamp("updated_at").nullable();
     });
   }
 

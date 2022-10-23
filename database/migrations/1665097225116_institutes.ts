@@ -17,7 +17,7 @@ export default class extends BaseSchema {
       table.string("logo", 255).nullable();
       table.boolean("active").notNullable().defaultTo(false);
       table.boolean("online").notNullable().defaultTo(false);
-      table.timestamp("updated_at").notNullable();
+      table.timestamp("updated_at").nullable();
     });
   }
 
