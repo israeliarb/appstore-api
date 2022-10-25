@@ -1,9 +1,9 @@
-import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
-import Institute from 'App/Models/Institute';
-import User from 'App/Models/User'
+import BaseSeeder from "@ioc:Adonis/Lucid/Seeder";
+import Institute from "App/Models/Institute";
+import User from "App/Models/User";
 
 export default class InstituteSeeder extends BaseSeeder {
-  public async run () {
+  public async run() {
     const user = await User.create({
       email: "institute@email.com",
       password: "123456",
@@ -15,6 +15,6 @@ export default class InstituteSeeder extends BaseSeeder {
       active: true,
       online: true,
       userId: user.id,
-    })
+    });
   }
 }
