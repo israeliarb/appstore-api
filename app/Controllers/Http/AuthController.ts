@@ -60,6 +60,7 @@ export default class AuthController {
         data = {
           id_client: client.id,
           name: client.name,
+          cpf: client.cpf,
           phone: client.phone,
           email: userAuth.email,
         };
