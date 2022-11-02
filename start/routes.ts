@@ -9,6 +9,8 @@ Route.post("/client/register", "ClientsController.store");
 
 Route.group(() => {
   Route.get("auth/me", "AuthController.me");
+
+  Route.put("/client/update", "ClientsController.update");
 }).middleware("auth");
 
 Route.get("/", async () => {
