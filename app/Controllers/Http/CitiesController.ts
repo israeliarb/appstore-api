@@ -11,4 +11,13 @@ export default class CitiesController {
 
     return response.ok(cities);
   }
+
+  public async Institutes({ params, response }: HttpContextContract) {
+    const city = await City.query()
+      .where("id", params.id)
+      .preload("institutes")
+      .firstOrFail();
+
+    return response.ok(city.institutes);
+  }
 }
