@@ -1,6 +1,6 @@
 import { BaseModel, column } from "@ioc:Adonis/Lucid/Orm";
 
-export default class IntituteCity extends BaseModel {
+export default class InstitutesCity extends BaseModel {
   @column({ isPrimary: true })
   public city_id: number;
 
