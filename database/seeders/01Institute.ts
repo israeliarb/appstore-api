@@ -68,7 +68,7 @@ export default class InstituteSeeder extends BaseSeeder {
         delivery_costs: faker.datatype.float({
           min: 0,
           max: 10,
-          precision: 0.01,
+          precision: 0.5,
         }),
       });
     }
