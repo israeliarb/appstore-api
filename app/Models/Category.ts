@@ -13,7 +13,7 @@ export default class Category extends BaseModel {
   public description: string;
 
   @column()
-  public position: string;
+  public position: number;
 
   @column()
   public active: boolean;

@@ -1,7 +1,7 @@
 import { BaseModel, column, HasOne, hasOne } from "@ioc:Adonis/Lucid/Orm";
 import City from "./City";
 
-export default class OrderAdress extends BaseModel {
+export default class OrderAddress extends BaseModel {
   @column({ isPrimary: true })
   public id: number;
 
