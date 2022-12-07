@@ -117,7 +117,7 @@ export default class OrdersController {
       .preload("order_status", (statusQuery) => {
         statusQuery.preload("status");
       })
-      .orderBy("order_id", "desc");
+      .orderBy("id", "desc");
     return response.ok(orders);
   }
 
