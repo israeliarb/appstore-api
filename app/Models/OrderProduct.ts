@@ -1,7 +1,7 @@
 import { BaseModel, column, HasOne, hasOne } from "@ioc:Adonis/Lucid/Orm";
 import Product from "./Product";
 
-export default class OrderProduct extends BaseModel {
+export default class  OrderProduct extends BaseModel {
   @column({ isPrimary: true })
   public id: number;
 

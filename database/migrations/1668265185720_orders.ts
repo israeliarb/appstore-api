@@ -24,13 +24,13 @@ export default class extends BaseSchema {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("payment_type");
+        .inTable("payment_types");
       table
         .integer("order_address_id")
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("order_adresses");
+        .inTable("order_addresses");
       table.decimal("total_price", 10, 2).notNullable();
       table.decimal("delivery_price", 10, 2).notNullable().defaultTo(0);
       table.string("observation").nullable();
